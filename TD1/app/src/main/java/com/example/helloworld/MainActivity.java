@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "n = "+n);
         int f = factorielle(n);
         Log.i(TAG, n+"! = "+f);
+
+
+        
     }
     private int factorielle(int n){
         int r;
