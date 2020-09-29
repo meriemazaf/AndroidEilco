@@ -21,13 +21,16 @@ public class MainActivity extends AppCompatActivity {
 
         Button rollButton = (Button) findViewById(R.id.btn);
         final TextView txt = (TextView) findViewById(R.id.txt);
+        final TextView txt1 = (TextView) findViewById(R.id.txt1);
         rollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Toast toast = Toast.makeText(MainActivity.this, "Dé lancé!", Toast.LENGTH_SHORT);
                 //toast.show();
                 int i = getRandomNumber(1,6);
+                int j= getRandomNumber(1,6);
                 txt.setText(String.valueOf(i));
+                txt1.setText(String.valueOf(j));
 
             }
         });
