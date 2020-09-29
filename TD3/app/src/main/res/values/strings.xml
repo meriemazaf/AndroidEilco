@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">TD3</string>
+    <string name="app_name">Dice Roller</string>
+    <string name="btn_string">Lancer le dé</string>
 </resources>
