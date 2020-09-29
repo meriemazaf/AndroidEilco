@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <DatePicker
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"/>
+    <TimePicker
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date"
+        android:layout_centerHorizontal="true"
+        android:timePickerMode="spinner"
+        android:layout_toRightOf="@+id/"/>
+    <EditText
+        android:id="@+id/temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Température"
+        android:layout_below="@+id/time"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="°C"
+        android:textSize="20dp"
+        android:layout_toRightOf="@id/temperature"
+        android:layout_below="@id/time"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:id="@+id/vitesse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Vitesse du vent"
+        android:layout_below="@+id/temperature"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Km/h"
+        android:textSize="20dp"
+        android:layout_toRightOf="@id/vitesse"
+        android:layout_below="@id/temperature"
+        android:layout_marginTop="10dp"/>
+
+    <Spinner
+        android:id="@+id/ciel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vitesse"
+        android:entries="@array/etat_ciel"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"/>
+
+
+</RelativeLayout>

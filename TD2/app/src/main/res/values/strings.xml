@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">TD2</string>
     <string name="message">Salut tout le monde !</string>
+    <string-array name="etat_ciel">
+        <item>Dégagé</item>
+        <item>Pluvieux</item>
+        <item>Couvert</item>
+    </string-array>
 </resources>
