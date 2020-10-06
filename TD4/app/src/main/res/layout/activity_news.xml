@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NewsActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Details"
+        android:textAllCaps="true"
+        android:textColor="#2196F3"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ECE6E6"
+        android:fontFamily="sans-serif-black"
+        android:text="Logout"
+        android:textAllCaps="true"
+        android:textColor="#2196F3"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+         />
+    <Button
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ECE6E6"
+        android:fontFamily="sans-serif-black"
+        android:text="About"
+        android:textAllCaps="true"
+        android:textColor="#2196F3"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:layout_above="@+id/details"
+        android:layout_centerHorizontal="true"
+        />
+</RelativeLayout>
