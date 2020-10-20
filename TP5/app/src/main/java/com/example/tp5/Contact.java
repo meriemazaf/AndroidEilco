@@ -6,9 +6,10 @@ public class Contact {
     private String prenom;
     private String imageUrl;
 
-    public Contact(String nom, String prenom) {
+    public Contact(String nom, String prenom, String imageUrl) {
         this.nom = nom;
         this.prenom = prenom;
+        this.imageUrl = imageUrl;
     }
 
     public String getNom() {

@@ -22,13 +22,13 @@ public class ContactActivity extends AppCompatActivity {
         RecyclerView rvContacts = (RecyclerView) findViewById(R.id.rvContacts);
 
         //Initialisation des contacts
-        contacts.add(new Contact("Jean", "Pierre"));
-        contacts.add(new Contact("Jeanne", "D'arc"));
-        contacts.add(new Contact("Pierre", "Menez"));
-        contacts.add(new Contact("Arthur", "Rimbaut"));
-        contacts.add(new Contact("Richard", "Coeur de lion"));
-        contacts.add(new Contact("Zinedine", "Zidane"));
-        contacts.add(new Contact("Yannick", "Noah"));
+        contacts.add(new Contact("Jean", "Pierre", "https://histoire-image.org/sites/default/jeanne-arc-sacre-charlesvii.jpg"));
+        contacts.add(new Contact("Jeanne", "D'arc", "https://histoire-image.org/sites/default/jeanne-arc-sacre-charlesvii.jpg"));
+        contacts.add(new Contact("Pierre", "Menez", "https://histoire-image.org/sites/default/jeanne-arc-sacre-charlesvii.jpg"));
+        contacts.add(new Contact("Arthur", "Rimbaut", "https://histoire-image.org/sites/default/jeanne-arc-sacre-charlesvii.jpg"));
+        contacts.add(new Contact("Richard", "Coeur de lion", "https://histoire-image.org/sites/default/jeanne-arc-sacre-charlesvii.jpg"));
+        contacts.add(new Contact("Zinedine", "Zidane", "https://histoire-image.org/sites/default/jeanne-arc-sacre-charlesvii.jpg"));
+        contacts.add(new Contact("Yannick", "Noah", "https://histoire-image.org/sites/default/jeanne-arc-sacre-charlesvii.jpg"));
 
         //Création d'un adapter avec initialisation du constructeur avec notre liste de contacts
         ContactsAdapter adapter = new ContactsAdapter(contacts);
