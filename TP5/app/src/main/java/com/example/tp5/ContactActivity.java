@@ -31,7 +31,7 @@ public class ContactActivity extends AppCompatActivity {
         contacts.add(new Contact("Yannick", "Noah", "https://histoire-image.org/sites/default/jeanne-arc-sacre-charlesvii.jpg"));
 
         //Création d'un adapter avec initialisation du constructeur avec notre liste de contacts
-        ContactsAdapter adapter = new ContactsAdapter(contacts);
+        ContactsAdapter adapter = new ContactsAdapter(this,contacts);
         //On notifie au recyclerview notre adapter
         rvContacts.setAdapter(adapter);
         //On déclare quelle type de LayoutManger on désire
