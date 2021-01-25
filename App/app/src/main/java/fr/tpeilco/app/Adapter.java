@@ -1,4 +1,4 @@
-package fr.mohamed.app;
+package fr.tpeilco.app;
 
 import android.app.Dialog;
 import android.content.Context;

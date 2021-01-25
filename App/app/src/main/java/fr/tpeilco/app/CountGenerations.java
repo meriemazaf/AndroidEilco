@@ -1,4 +1,4 @@
-package fr.mohamed.app;
+package fr.tpeilco.app;
 
 public class CountGenerations {
     private int gen1;

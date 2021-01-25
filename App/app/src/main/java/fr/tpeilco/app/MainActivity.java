@@ -1,4 +1,4 @@
-package fr.mohamed.app;
+package fr.tpeilco.app;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;

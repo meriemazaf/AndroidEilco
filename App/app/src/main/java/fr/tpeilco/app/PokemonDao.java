@@ -1,4 +1,4 @@
-package fr.mohamed.app;
+package fr.tpeilco.app;
 import retrofit2.Call;
 import retrofit2.http.Path;
 import retrofit2.http.Query;

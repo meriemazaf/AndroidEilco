@@ -1,4 +1,4 @@
-package fr.mohamed.app;
+package fr.tpeilco.app;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
