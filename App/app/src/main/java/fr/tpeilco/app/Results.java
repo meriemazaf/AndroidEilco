@@ -50,46 +50,6 @@ public class Results {
     public void setUrl(String url) {
         this.url = url;
     }
-
-//    public List<PokemonSpecies> getPokemon_species() {
-//        return pokemon_species;
-//    }
-//
-//    public void setPokemon_species(List<PokemonSpecies> pokemon_species) {
-//        this.pokemon_species = pokemon_species;
-//    }
-
-//    private List<PokemonSpecies> pokemon_species;
-
-
-//    @ColumnInfo(name = "abilities")
-//    private List<Ability> abilities;
-//    @ColumnInfo(name = "types")
-//    private List<PokemonType> types;
-//    @ColumnInfo(name = "stats")
-//    private List<PokemonStat> stats;
-//
-//    @ColumnInfo(name = "sprites")
-//    private List<PokemonSprites> sprites;
-//    @ColumnInfo(name = "moves")
-//    private List<PokemonMove> moves;
-
-
-//    public Results(String url, String image) {
-//        this.url = url;
-//        this.image = image;
-//    }
-//
-//    public Results(int id, String name, int base_experience, int height, boolean is_default, int order, int weight) {
-//        this.id = id;
-//        this.name = name;
-//        this.base_experience = base_experience;
-//        this.height = height;
-//        this.is_default = is_default;
-//        this.order = order;
-//        this.weight = weight;
-//    }
-
     public void setCle(int cle) {
         this.cle = cle;
     }

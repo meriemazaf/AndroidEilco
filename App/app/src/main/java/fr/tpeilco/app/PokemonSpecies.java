@@ -10,9 +10,7 @@ public class PokemonSpecies {
     private String name;
     private String url;
     private int base_experience;
-    //    @ColumnInfo(name = "height")/
     private int height;
-    //
     private int weight;
 
 

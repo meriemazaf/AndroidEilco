@@ -50,9 +50,7 @@ public class Pokemon {
     @ColumnInfo(name = "results")
     private List<Results> results = new ArrayList<>();
     private int base_experience;
-    //    @ColumnInfo(name = "height")/
     private int height;
-    //
     private int weight;
 
     public Pokemon(int ID, int count, String next, String previous, List<Results> results, int base_experience, int height, int weight) {

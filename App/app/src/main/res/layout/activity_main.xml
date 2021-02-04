@@ -10,42 +10,6 @@
     tools:context=".MainActivity">
 
 
-<!--   <ImageView-->
-<!--       android:layout_width="wrap_content"-->
-<!--       android:layout_height="wrap_content"-->
-<!--       android:src="@drawable/pokedex"-->
-<!--       android:layout_gravity="center"-->
-<!--       />-->
-<!--   <com.airbnb.lottie.LottieAnimationView-->
-<!--       android:id="@+id/loading"-->
-<!--       android:layout_width="wrap_content"-->
-<!--       android:layout_height="wrap_content"-->
-<!--       app:layout_constraintBottom_toBottomOf="parent"-->
-<!--       app:layout_constraintBottom_toTopOf="parent"-->
-<!--       app:layout_constraintLeft_toLeftOf="parent"-->
-<!--       app:layout_constraintRight_toRightOf="parent"-->
-<!--       app:lottie_autoPlay="true"-->
-<!--       app:lottie_loop="true"-->
-<!--       android:scaleType="fitCenter"-->
-<!--       app:lottie_rawRes="@raw/progress_loading" />-->
-
-
-
-
-<!--   <com.airbnb.lottie.LottieAnimationView-->
-<!--       android:id="@+id/pikachoLoading"-->
-<!--       android:layout_width="wrap_content"-->
-<!--       android:layout_height="wrap_content"-->
-<!--       app:layout_constraintBottom_toBottomOf="parent"-->
-<!--       app:layout_constraintBottom_toTopOf="parent"-->
-<!--       app:layout_constraintLeft_toLeftOf="parent"-->
-<!--       app:layout_constraintRight_toRightOf="parent"-->
-<!--       app:lottie_autoPlay="true"-->
-<!--       app:lottie_loop="true"-->
-<!--       app:lottie_rawRes="@raw/pikacholoading" />-->
-
-
-
    <androidx.recyclerview.widget.RecyclerView
        android:id="@+id/rv_generation"
        android:layout_width="wrap_content"
@@ -66,7 +30,7 @@
          android:id="@+id/generation"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:text="press a generation"
+         android:text="choose a generation"
          android:textColor="@color/purple_500"
          android:textSize="30dp"
          android:gravity="center"

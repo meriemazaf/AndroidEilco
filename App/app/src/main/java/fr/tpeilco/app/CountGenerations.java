@@ -26,14 +26,14 @@ public class CountGenerations {
     public int getOffset(String name){
         int offset;
         switch(name) {
-            case "generation-i": offset = 0; break;
-            case "generation-ii" : offset = this.getGen1(); break;
-            case "generation-iii" : offset = this.getGen1() + this.getGen2(); break;
-            case "generation-iv" : offset = this.getGen1() + this.getGen2() + this.getGen3(); break;
-            case "generation-v" : offset = this.getGen1() + this.getGen2() + this.getGen3() + this.getGen4(); break;
-            case "generation-vi" : offset = this.getGen1() + this.getGen2() + this.getGen3() + this.getGen4() + this.getGen5(); break;
-            case "generation-vii" : offset = this.getGen1() + this.getGen2() + this.getGen3() + this.getGen4() + this.getGen5() + this.getGen6(); break;
-            case "generation-viii" : offset = this.total; break;
+            case "generation 1": offset = 0; break;
+            case "generation 2" : offset = this.getGen1(); break;
+            case "generation 3" : offset = this.getGen1() + this.getGen2(); break;
+            case "generation 4" : offset = this.getGen1() + this.getGen2() + this.getGen3(); break;
+            case "generation 5" : offset = this.getGen1() + this.getGen2() + this.getGen3() + this.getGen4(); break;
+            case "generation 6" : offset = this.getGen1() + this.getGen2() + this.getGen3() + this.getGen4() + this.getGen5(); break;
+            case "generation 7" : offset = this.getGen1() + this.getGen2() + this.getGen3() + this.getGen4() + this.getGen5() + this.getGen6(); break;
+            case "generation 8" : offset = this.total; break;
             default: offset = 0;
         }
 
@@ -44,14 +44,14 @@ public class CountGenerations {
     public int getLimit(String name){
         int limit;
         switch(name) {
-            case "generation-i": limit = this.getGen1(); break;
-            case "generation-ii" : limit = this.getGen2(); break;
-            case "generation-iii" : limit =  this.getGen3(); break;
-            case "generation-iv" : limit =  this.getGen4(); break;
-            case "generation-v" : limit = this.getGen5(); break;
-            case "generation-vi" : limit = this.getGen6(); break;
-            case "generation-vii" : limit =  this.getGen7(); break;
-            case "generation-viii" : limit = this.getGen8(); break;
+            case "generation 1": limit = this.getGen1(); break;
+            case "generation 2" : limit = this.getGen2(); break;
+            case "generation 3" : limit =  this.getGen3(); break;
+            case "generation 4" : limit =  this.getGen4(); break;
+            case "generation 5" : limit = this.getGen5(); break;
+            case "generation 6" : limit = this.getGen6(); break;
+            case "generation 7" : limit =  this.getGen7(); break;
+            case "generation 8" : limit = this.getGen8(); break;
             default: limit = 0;
         }
 

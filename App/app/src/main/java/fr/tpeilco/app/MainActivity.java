@@ -63,25 +63,6 @@ public class MainActivity extends AppCompatActivity implements AdapterGeneration
         reset_btn = findViewById(R.id.reset_btn);
         database = ResultsDB.getInstance(this);
 
-
-//        timer = new Thread(){
-//            @Override
-//            public void run(){
-//                try {
-//                    synchronized (this) {
-//                        wait(9000);
-//                    }
-//                }catch(InterruptedException e){
-//                        e.printStackTrace();
-//                    }finally{
-//                        Intent intent = new Intent(MainActivity.this, acceuilActivity.class);
-//                        startActivity(intent);
-//                        finish();
-//                    }
-//                }
-//            };
-//        timer.start();
-
         Gson gson = new GsonBuilder().serializeNulls().create();
 
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
@@ -129,135 +110,13 @@ public class MainActivity extends AppCompatActivity implements AdapterGeneration
             public void onClick(View v) {
                 database.ResultsDao().reset(adapter.list_pokemon);
                 adapter.list_pokemon.clear();
-//                adapter.list_pokemon.addAll(database.ResultsDao().g)
                 adapter.setResults(adapter.list_pokemon);
             }
         });
 
-//        getGenerationObservable()
-//                .flatMap(new Function<ResultsGen, Observable<PokemonSpecies>>() {
-//                    @Override
-//                    public Observable<PokemonSpecies> apply(ResultsGen resultGen) throws Throwable {
-//
-//                        return getGenerationObservable2(resultGen);
-//                    }
-//                })
-//                .flatMap(new Function<PokemonSpecies, ObservableSource<PokemonSpecies>>() {
-//                    @Override
-//                    public ObservableSource<PokemonSpecies> apply(PokemonSpecies pokemonSpecie) throws Throwable {
-//
-//                        return getGenerationObservable3(pokemonSpecie);
-//                    }
-//                })
-////                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribeOn(Schedulers.io())
-//                .subscribe(new Observer<PokemonSpecies>() {
-//                               @Override
-//                               public void onSubscribe(@NonNull Disposable d) {
-//                                   disposables.add(d);
-//
-//                               }
-//
-//                               @Override
-//                               public void onNext(@NonNull PokemonSpecies pokemonSpecie) {
-//                                   Log.d("errr", String.valueOf(pokemonSpecie.getId()));
-//                                   adapter.updateResult(pokemonSpecie);
-//
-//                               }
-//
-//                               @Override
-//                               public void onError(@NonNull Throwable e) {
-//                                    Log.d("onError; ", "dd");
-//                               }
-//
-//                               @Override
-//                               public void onComplete() {
-//                                   Log.d("onError; ", "dd");
-//
-//                               }
-//                           });
-//
-
-
-
-
-
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                getPokemonsObservable(151)
-//                        .flatMap(new Function<Results, ObservableSource<Results>>() {
-//                            @Override
-//                            public ObservableSource<Results> apply(Results result) throws Throwable {
-//
-//                                return getDetailsPokemonObservable(result);
-//                            }
-//                        })
-//                        .observeOn(AndroidSchedulers.mainThread())
-//                        .subscribe(new Observer<Results>() {
-//
-//
-//                            @Override
-//                            public void onSubscribe(@NonNull Disposable d) {
-//
-//                            }
-//
-//                            @Override
-//                            public void onNext(@NonNull Results result) {
-//                                Log.d("result1", String.valueOf(result.getName()));
-//                                adapter.updateResult(result);
-//                            }
-//
-//                            @Override
-//                            public void onError(@NonNull Throwable e) {
-//                                Log.d("errore", "");
-//                            }
-//
-//                            @Override
-//                            public void onComplete() {
-//
-//                            }
-//                        });
-//
-//                getGenerationObservable()
-//                        .flatMap(new Function<Results, ObservableSource<Results>>() {
-//                            @Override
-//                            public ObservableSource<Results> apply(Results result) throws Throwable {
-//
-//                                return getDetailsGenerationObservable(result);
-//                            }
-//                        })
-//                        .observeOn(AndroidSchedulers.mainThread())
-//                        .subscribe(new Observer<Results>() {
-//                            @Override
-//                            public void onSubscribe(@NonNull Disposable d) {
-//
-//                            }
-//
-//                            @Override
-//                            public void onNext(@NonNull Results result) {
-//                                Log.d("onNext2", String.valueOf(result.getName()));
-//                                adapter_generation.updateResult(result);
-//                            }
-//
-//                            @Override
-//                            public void onError(@NonNull Throwable e) {
-//
-//                            }
-//
-//                            @Override
-//                            public void onComplete() {
-//
-//                            }
-//                        });
-
 
     }
 
-//
-    public void resetDatabase(){
-
-    }
     public void setResults(List<Results> results){
         adapter.setResults(results);
     }
@@ -285,14 +144,7 @@ public class MainActivity extends AppCompatActivity implements AdapterGeneration
             }
             countGenerations = response.body();
             Log.d("messageA", String.valueOf(countGenerations.getGen1()));
-//            response.raw().body().close();
 
-            // set adapters :
-
-
-
-
-//                getGenerationObservable();
             }
 
 
@@ -361,9 +213,6 @@ public class MainActivity extends AppCompatActivity implements AdapterGeneration
                 .map(new Function<ResultsGeneration, ResultsGeneration>() {
                     @Override
                     public ResultsGeneration apply(ResultsGeneration result2) throws Throwable {
-//                        int delay = ((new Random()).nextInt(5) + 1) * 400;
-//                        Thread.sleep(delay);
-//                        Log.e("setImage", String.valueOf(result2.getPokemon_species().get(1).getName()));
                         result.setId(result2.getId());
                         result.setImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMQUN42IwmH8Vst7Ftxykw-Z67iEVjl6TbmQ&usqp=CAU");
                         return result;
@@ -395,89 +244,6 @@ public class MainActivity extends AppCompatActivity implements AdapterGeneration
 
 
     }
-
-
-//    private @NonNull Observable<ResultsGen> getGenerationObservable(){
-//
-//        return  pokemonApi
-//                .getGeneration()
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .flatMap(new Function<Generation, ObservableSource<ResultsGen>>() {
-//                    @Override
-//                    public ObservableSource<ResultsGen> apply(Generation generation) throws Throwable {
-//                        // adapter here
-//                        for(ResultsGen gen: generation.getResults()){
-//                            gen.setImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMQUN42IwmH8Vst7Ftxykw-Z67iEVjl6TbmQ&usqp=CAU");
-//                        }
-//                        adapter_generation.setResults(generation.getResults());
-//                        // stockage dans la base de donnees
-//                        Log.d("setImage", "");
-//                        return Observable.fromIterable(generation.getResults());
-//                    }
-//                });
-//
-//
-//    }
-//
-//
-
-
-
-
-
-
-//    private @NonNull Observable<PokemonSpecies> getGenerationObservable2(@NotNull ResultsGen result){
-//
-//        return  pokemonApi
-//                .getGenerationsDetails(result.getUrl())
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .flatMap(new Function<ResultsGen, ObservableSource<PokemonSpecies>>() {
-//                    @Override
-//                    public ObservableSource<PokemonSpecies> apply(ResultsGen result) throws Throwable {
-//                        // adapter here
-////                        adapter_generation.setResults(generation.getResults());
-//                        // stockage dans la base de donnees
-////                        result.setImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMQUN42IwmH8Vst7Ftxykw-Z67iEVjl6TbmQ&usqp=CAU");
-//                        Log.e("setImage", String.valueOf(result.getPokemon_species().get(33).getName()));
-//                        adapter.setResults(result.getPokemon_species());
-//                        return Observable.fromIterable(result.getPokemon_species());
-//                    }
-//                });
-//
-//
-//    }
-
-//    private @NonNull Observable<PokemonSpecies> getGenerationObservable3(PokemonSpecies PokemonSpecie){
-//        return  pokemonApi
-//                .getPokemonsDetails(PokemonSpecie.getName())
-//                .map(new Function<PokemonSpecies, PokemonSpecies>() {
-//                    @Override
-//                    public PokemonSpecies apply(PokemonSpecies pokemonSpecieNouveau) throws Throwable {
-//                        Log.d("errr3", String.valueOf(PokemonSpecie.getName()));
-//                        PokemonSpecie.setImage(pokemonSpecieNouveau.getImage());
-//                        return PokemonSpecie;
-//                    }
-//                })
-//                .subscribeOn(Schedulers.io());
-//
-//    }
-
-//    private Observable<Results> getDetailsGenerationObservable4(final Results result){
-//        return pokemonApi
-//                .getGenerationsDetails(result.getName())
-//                .map(new Function<Results, Results>() {
-//                    @Override
-//                    public Results apply(Results result2) throws Throwable {
-//                        int delay = ((new Random()).nextInt(5) + 1) * 1000;
-//                        Thread.sleep(delay);
-//                        result.setImage("https://pokeres.bastionbot.org/images/pokemon/"+ result2.getId() +".png");
-//                        return result;
-//                    }
-//                })
-//                .subscribeOn(Schedulers.io());
-//    }
 
 
 

@@ -69,15 +69,7 @@ public class AdapterGeneration extends RecyclerView.Adapter<AdapterGeneration.Vi
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
                 .build();
-//
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl("https://pokeapi.co/")
-//                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
-//                .addConverterFactory(GsonConverterFactory.create(gson))
-//                .client(okHttpClient)
-//                .build();
-//        pokemonApi = retrofit.create(PokemonDao.class);
-//
+
         Retrofit retrofitCount = new Retrofit.Builder()
                 .baseUrl("https://pokeapi.glitch.me/")
                 .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
@@ -187,7 +179,6 @@ public class AdapterGeneration extends RecyclerView.Adapter<AdapterGeneration.Vi
                     int offset;
                 int limit;
                 Toast.makeText(context, "generation selected" + gen.getName(), Toast.LENGTH_SHORT).show();
-//                callbackMethods.getPokemonsObservable();
                 offset = countGenerations.getOffset(gen.getName());
                 limit = countGenerations.getLimit(gen.getName());
                 if (gen.getName().equals("generation-viii")) limit = 999999;
@@ -268,13 +259,6 @@ public class AdapterGeneration extends RecyclerView.Adapter<AdapterGeneration.Vi
                 }
                 countGenerations = response.body();
                 Log.d("messageA", String.valueOf(countGenerations.getGen1()));
-
-                // set adapters :
-
-
-
-
-//                getGenerationObservable();
             }
 
 
@@ -287,125 +271,6 @@ public class AdapterGeneration extends RecyclerView.Adapter<AdapterGeneration.Vi
     }
 
 
-    // deuxieme appel inutil :
-//      detailsPokemon.setUrl(result.getUrl());
-//                               detailsPokemon.setImage(result.getImage());
-//    Call<Results> call = pokemonApi.getPokemonsDetailsByName(result.getName());
-//                                call.enqueue(new Callback<Results>() {
-//        @Override
-//        public void onResponse(Call<Results> call, Response<Results> response) {
-//            if(!response.isSuccessful()){
-//                Toast.makeText(context, "Error occur in calling pokemon details. code : "+ response.code(), Toast.LENGTH_SHORT).show();
-//                return;
-//            }
-//            Log.d("getBody", String.valueOf(response.body().getBase_experience()));
-//            detailsPokemon.setId(response.body().getId());
-//            detailsPokemon.setBase_experience(response.body().getBase_experience());
-//            detailsPokemon.setHeight(response.body().getHeight());
-//
-//        }
-//
-//        @Override
-//        public void onFailure(Call<Results> call, Throwable t) {
-//            Toast.makeText(context, "failure in the details request",Toast.LENGTH_SHORT).show();
-//        }
-//    });
-//                                result.setHeight(detailsPokemon.getHeight());
-//                                result.setBase_experience(detailsPokemon.getBase_experience());
-//                                result.setId(detailsPokemon.getId());
-//                                callbackMethods.updateResult(result);
-//                                Log.d("result1", String.valueOf(detailsPokemon.getHeight()));
-//                                callbackMethods.updateDetailsPokemon(detailsPokemon);
-
-
-
-
-
-
-
-
-
-
-
-
-//    private @io.reactivex.rxjava3.annotations.NonNull Observable<Results> getPokemonsObservable(int limit){
-//
-//        return  pokemonApi
-//                .getPokemons(0, limit)
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .flatMap(new Function<Pokemon, ObservableSource<Results>>() {
-//                    @Override
-//                    public ObservableSource<Results> apply(Pokemon pokemon) throws Throwable {
-//                        // adapter here
-//                        setResults(pokemon.getResults());
-//                        // stockage dans la base de donnees
-//                        Log.d("pokemonN", String.valueOf(pokemon.getResults().get(2).getName()));
-//                        return Observable.fromIterable(pokemon.getResults());
-//                    }
-//                });
-//
-//
-//    }
-//
-//
-//
-//    private Observable<Results> getDetailsPokemonObservable(final Results result){
-//        return pokemonApi
-//                .getGenerationsDetails(result.getUrl())
-//                .map(new Function<Results, Results>() {
-//                    @Override
-//                    public Results apply(Results result2) throws Throwable {
-//                        int delay = ((new Random()).nextInt(5) + 1) * 1000;
-//                        Thread.sleep(delay);
-//                        result.setImage("https://pokeres.bastionbot.org/images/pokemon/"+ result2.getId() +".png");
-//                        return result;
-//                    }
-//                })
-//                .subscribeOn(Schedulers.io());
-//    }
-//
-//
-//
-//    private Observable<Results> getDetailsGenerationObservable(final Results result){
-//        return pokemonApi
-//                .getGenerationsDetails(result.getUrl())
-//                .map(new Function<Results, Results>() {
-//                    @Override
-//                    public Results apply(Results result2) throws Throwable {
-//                        int delay = ((new Random()).nextInt(5) + 1) * 400;
-//                        Thread.sleep(delay);
-////                        Log.e("setImage", String.valueOf(result2.getPokemon_species().get(1).getName()));
-//                        result.setImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMQUN42IwmH8Vst7Ftxykw-Z67iEVjl6TbmQ&usqp=CAU");
-//                        return result;
-//                    }
-//                })
-//                .subscribeOn(Schedulers.io());
-//    }
-//
-//
-//    private @io.reactivex.rxjava3.annotations.NonNull Observable<Results> getGenerationObservable(){
-//
-//        return  pokemonApi
-//                .getGeneration()
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .flatMap(new Function<Generation, ObservableSource<Results>>() {
-//                    @Override
-//                    public ObservableSource<Results> apply(Generation generation) throws Throwable {
-//                        // adapter here
-//                        for(Results gen: generation.getResults()){
-//                            gen.setImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMQUN42IwmH8Vst7Ftxykw-Z67iEVjl6TbmQ&usqp=CAU");
-//                        }
-//                        setResults(generation.getResults());
-//                        // stockage dans la base de donnees
-//                        Log.d("setImage", "");
-//                        return Observable.fromIterable(generation.getResults());
-//                    }
-//                });
-//
-//
-//    }
 
     public interface callbackMethods{
         public Observable<Results> getPokemonsObservable(int offset, int limit);

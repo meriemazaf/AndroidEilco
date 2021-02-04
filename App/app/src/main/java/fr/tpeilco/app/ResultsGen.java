@@ -5,15 +5,10 @@ import java.util.List;
 public class ResultsGen {
 
     private int cle;
-    //Url
     private String url;
-    //    @ColumnInfo(name = "id")
     private int id;
-    //    @ColumnInfo(name = "name")
     private String name;
-    //    @ColumnInfo(name = "image")
     private String image = null;
-    //    @ColumnInfo(name = "base_experience")
 
     private List<PokemonSpecies> pokemon_species;
 

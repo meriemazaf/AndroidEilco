@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "fr.mohamed.app"
+        applicationId "fr.tpeilco.app"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
